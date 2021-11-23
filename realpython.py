@@ -9,7 +9,6 @@ class Scraper:
     def __init__(self):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(5)
-        pass
 
     def open(self, address):
         self.browser.get(address)
