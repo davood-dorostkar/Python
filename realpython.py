@@ -1,6 +1,7 @@
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 class Scraper:
@@ -34,6 +35,11 @@ class Scraper:
     def closeBrowser(self):
         self.browser.close()
 
+    def searchFor(self, keyword):
+        searchBox = self.browser.find_element(By.XPATH, "//input[@placeholder='Search' and @type='text']")
+        searchBox.send_keys(keyword)
+        searchBox.send_keys(Keys.ENTER)
+
 
 if __name__ == "__main__":
     insta = Scraper()
@@ -41,4 +47,6 @@ if __name__ == "__main__":
     insta.getUserPass('pass.txt')
     insta.login()
     sleep(3)
+    insta.searchFor('پسته')
+    sleep(6)
     insta.closeBrowser()
