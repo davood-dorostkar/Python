@@ -9,6 +9,8 @@ class Scraper:
     def __init__(self):
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(5)
+        self.accounts = []
+        self.tags = []
 
     def open(self, address):
         self.browser.get(address)
@@ -39,7 +41,7 @@ class Scraper:
     def searchFor(self, keyword):
         searchBox = self.browser.find_element(By.XPATH, "//input[@placeholder='Search' and @type='text']")
         searchBox.send_keys(keyword)
-        searchBox.send_keys(Keys.ENTER)
+        # searchBox.send_keys("\n")
 
     def extractElements(self, fileName):
         file = open(fileName, "r")
@@ -55,8 +57,7 @@ class Scraper:
                 element = content
                 data.append(element)
                 break
-        self.accounts = pd.DataFrame(data, columns=['name'])
-        print(self.accounts)
+        return pd.DataFrame(data, columns=['name'])
 
 
 if __name__ == "__main__":
@@ -66,7 +67,9 @@ if __name__ == "__main__":
     insta.login()
     sleep(3)
     insta.searchFor('پسته')
-    insta.extractElements('accounts.txt')
-    insta.extractElements('tags.txt')
+    # insta.accounts = insta.extractElements('accounts.txt')
+    # print(insta.accounts.head())
+    # insta.tags = insta.extractElements('tags.txt')
+    # print(insta.tags.head())
     sleep(6)
     insta.closeBrowser()
