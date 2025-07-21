@@ -56,6 +56,19 @@ If you don’t want the space, either:
    print(a, b, sep='')  # Outputs: ali2
    ```
 
+## Types
+you can check var type with:
+```py
+type(msg)
+```
+
+>in python almost everything is a class. it means that you can use `.` to access the methods that exist in that class. for example:
+```py
+name = "Davood"
+print(name.lower()) # 'davood'
+```
+because `name` is a `str` class object.
+
 ## Strings
 
 a string is a list of characters:
@@ -87,6 +100,40 @@ here is a special char \" inside a string
 msg = "davood"
 print((msg + ' ') * 3) # davood davood davood 
 ```
+
+### String methods
+Here’s a **brief list of very important Python string methods** that you'll use often:
+
+| Method              | Description                                  | Example                            |
+| ------------------- | -------------------------------------------- | ---------------------------------- |
+| `str.lower()`       | Converts to lowercase                        | `'Ali'.lower() → 'ali'`            |
+| `str.upper()`       | Converts to uppercase                        | `'Ali'.upper() → 'ALI'`            |
+| `str.strip()`       | Removes leading/trailing whitespace          | `'  hi  '.strip() → 'hi'`          |
+| `str.replace(a, b)` | Replaces all `a` with `b`                    | `'a.b'.replace('.', '-') → 'a-b'`  |
+| `str.split(sep)`    | Splits string into a list                    | `'a,b'.split(',') → ['a', 'b']`    |
+| `str.join(list)`    | Joins list into string with separator        | `'-'.join(['a','b']) → 'a-b'`      |
+| `str.startswith(x)` | Checks if string starts with `x`             | `'abc'.startswith('a') → True`     |
+| `str.endswith(x)`   | Checks if string ends with `x`               | `'abc'.endswith('c') → True`       |
+| `str.find(x)`       | Finds index of `x`, or `-1` if not found     | `'abc'.find('b') → 1`              |
+| `str.isdigit()`     | Checks if string contains only digits        | `'123'.isdigit() → True`           |
+| `str.isalpha()`     | Checks if string contains only letters       | `'abc'.isalpha() → True`           |
+| `str.format()`      | Formats string with placeholders             | `'Hi {}'.format('Ali') → 'Hi Ali'` |
+| `f"...{var}..."`    | **f-strings** – inline variable substitution | `f'Hi {name}'`                     |
+
+- you can use indexes in `str.format`. it gives you more control:
+```py
+template = "Hello {0}, you have {1} new messages. {0}, don't forget to reply."
+result = template.format("Ali", 5)
+print(result) # Hello Ali, you have 5 new messages. Ali, don't forget to reply.
+```
+- you can also use var names:
+```py
+template = "Hello {name}, you are {age:3.1f} years old."
+result = template.format(name="Ali", age=25.666)
+print(result)
+```
+here `{age:3.1f}` means:
+- take 3 places for the whole number, with 1 decimal, and as float 
 
 ## Slicing
 
