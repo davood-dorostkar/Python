@@ -103,8 +103,8 @@ print((msg + ' ') * 3) # davood davood davood
 
 ### 🔹 String methods
 
-| Method              | Description                                  | Example                            |
-| ------------------- | -------------------------------------------- | ---------------------------------- |
+| Method              | Description                                  | Example                          |
+| ------------------- | -------------------------------------------- | -------------------------------- |
 | `str.lower()`       | Converts to lowercase                        | `'Ali'.lower() 'ali'`            |
 | `str.upper()`       | Converts to uppercase                        | `'Ali'.upper() 'ALI'`            |
 | `str.strip()`       | Removes leading/trailing whitespace          | `'  hi  '.strip() 'hi'`          |
@@ -117,7 +117,7 @@ print((msg + ' ') * 3) # davood davood davood
 | `str.isdigit()`     | Checks if string contains only digits        | `'123'.isdigit() True`           |
 | `str.isalpha()`     | Checks if string contains only letters       | `'abc'.isalpha() True`           |
 | `str.format()`      | Formats string with placeholders             | `'Hi {}'.format('Ali') 'Hi Ali'` |
-| `f"...{var}..."`    | **f-strings** – inline variable substitution | `f'Hi {name}'`                     |
+| `f"...{var}..."`    | **f-strings** – inline variable substitution | `f'Hi {name}'`                   |
 
 - you can use indexes in `str.format`. it gives you more control:
 ```py
@@ -286,18 +286,18 @@ print(profile["skills"][1])  # 'C++'
 
 ### 🔹 Dictionary Methods
 
-| Method                    | Description                                | Example                |
-| ------------------------- | ------------------------------------------ | ---------------------- |
-| `get(k)` / `get(k, d)`    | Returns value or `d` if `k` not found      | `d.get("x", 0)`        |
-| `keys()`                  | Returns all keys                           | `d.keys()`             |
-| `values()`                | Returns all values                         | `d.values()`           |
-| `items()`                 | Returns key-value pairs                    | `d.items()`            |
-| `update(d2)`              | add another dict to the current one        | `d.update(d2)`         |
-| `pop(k)` / `pop(k, d)`    | Removes key and returns value (or default) | `d.pop("x", 0)`        |
-| `popitem()`               | Removes & returns last (key, value) pair   | `d.popitem()`          |
-| `clear()`                 | Removes all items                          | `d.clear()`            |
-| `copy()`                  | Shallow copy of dict                       | `new = d.copy()`       |
-| `setdefault(k, d)`        | Returns value; sets key to `d` if missing  | `d.setdefault("x", 0)` |
+| Method                 | Description                                | Example                |
+| ---------------------- | ------------------------------------------ | ---------------------- |
+| `get(k)` / `get(k, d)` | Returns value or `d` if `k` not found      | `d.get("x", 0)`        |
+| `keys()`               | Returns all keys                           | `d.keys()`             |
+| `values()`             | Returns all values                         | `d.values()`           |
+| `items()`              | Returns key-value pairs                    | `d.items()`            |
+| `update(d2)`           | add another dict to the current one        | `d.update(d2)`         |
+| `pop(k)` / `pop(k, d)` | Removes key and returns value (or default) | `d.pop("x", 0)`        |
+| `popitem()`            | Removes & returns last (key, value) pair   | `d.popitem()`          |
+| `clear()`              | Removes all items                          | `d.clear()`            |
+| `copy()`               | Shallow copy of dict                       | `new = d.copy()`       |
+| `setdefault(k, d)`     | Returns value; sets key to `d` if missing  | `d.setdefault("x", 0)` |
 
 ## Tuple
 
@@ -364,19 +364,19 @@ print(a & b)              # {2}
 
 ### 🔹 Set Methods
 
-| Method / Operator              | Description                          | Example          |                        |      |
-| ------------------------------ | ------------------------------------ | ---------------- | ---------------------- | ---- |
-| `add(x)`                       | Adds item `x`                        | `s.add(10)`      |                        |      |
-| `remove(x)`                    | Removes item (KeyError if not found) | `s.remove(2)`    |                        |      |
-| `discard(x)`                   | Removes item if present (no error)   | `s.discard(5)`   |                        |      |
-| `clear()`                      | Empties the set                      | `s.clear()`      |                        |      |
-| `union(other)` / `\|`          | Combines sets                        | `s1.union(s2)` or `s1 \| s2`              |      |
-| `intersection(other)` / `&`    | Common elements                      | `s1 & s2`        |                        |      |
-| `difference(other)` / `-`      | Items in first not in second         | `s1 - s2`        |                        |      |
-| `symmetric_difference()` / `^` | Items in one but not both            | `s1 ^ s2`        |                        |      |
-| `copy()`                       | Shallow copy                         | `s2 = s1.copy()` |                        |      |
-| `len(s)`                       | Number of elements                   | `len(s)`         |                        |      |
-| `in`, `not in`                 | Membership test                      | `3 in s`         |                        |      |
+| Method / Operator              | Description                          | Example                      |     |     |
+| ------------------------------ | ------------------------------------ | ---------------------------- | --- | --- |
+| `add(x)`                       | Adds item `x`                        | `s.add(10)`                  |     |     |
+| `remove(x)`                    | Removes item (KeyError if not found) | `s.remove(2)`                |     |     |
+| `discard(x)`                   | Removes item if present (no error)   | `s.discard(5)`               |     |     |
+| `clear()`                      | Empties the set                      | `s.clear()`                  |     |     |
+| `union(other)` / `\|`          | Combines sets                        | `s1.union(s2)` or `s1 \| s2` |     |
+| `intersection(other)` / `&`    | Common elements                      | `s1 & s2`                    |     |     |
+| `difference(other)` / `-`      | Items in first not in second         | `s1 - s2`                    |     |     |
+| `symmetric_difference()` / `^` | Items in one but not both            | `s1 ^ s2`                    |     |     |
+| `copy()`                       | Shallow copy                         | `s2 = s1.copy()`             |     |     |
+| `len(s)`                       | Number of elements                   | `len(s)`                     |     |     |
+| `in`, `not in`                 | Membership test                      | `3 in s`                     |     |     |
 
 
 ### 🔹 Set Limitations
@@ -472,3 +472,71 @@ Booleans are actually a subclass of `int`:
 ```python
 isinstance(True, int)  # True
 ```
+
+Absolutely! Here's a **clear and compact guide** to Python's **file I/O (`file` type)** covering everything you asked: opening, reading, modes, `with` block usage, and method behaviors.
+
+---
+
+## File I/O 
+
+### 🔹 Opening a file
+
+```python
+f = open("data.txt")  # Open for reading
+```
+
+> Returns a **file object**.
+
+### 🔹 File Open Modes
+
+| Mode   | Meaning                | Notes                                     |
+| ------ | ---------------------- | ----------------------------------------- |
+| `'r'`  | Read-only              | File must exist                           |
+| `'w'`  | Write (truncate)       | Creates or overwrites file                |
+| `'x'`  | Write (fail if exists) | Raises error if file exists               |
+| `'a'`  | Append                 | Adds to end; creates file if missing      |
+| `'r+'` | Read and write         | File must exist                           |
+| `'b'`  | Binary mode            | Combine with others like `'rb'` or `'wb'` |
+| `'t'`  | Text mode (default)    | Combine like `'rt'`, `'wt'`               |
+
+
+### ⚠️ `close()` is important
+
+* Until `f.close()` is called (or the file object is garbage collected), **OS-level buffers may not write all data to disk**.
+* This means changes may not be visible to other processes or programs.
+* Also the file cannot be changed or deleted from somewhere else, because the file is being used.
+
+### 🔹 Safe file handling with `with`
+
+```python
+with open("data.txt", "r") as f:
+    content = f.read()
+```
+
+* Automatically **closes** the file when block exits
+* Prevents errors or data loss from forgetting `close()`
+
+### 🔹 File Pointer (Cursor)
+
+```python
+f.read()   # Reads from the current position
+f.seek(0)  # Moves the cursor to the beginning
+```
+
+- Use `seek(0)` to reset and re-read from the start.
+- When you run `f.read()`, the cursor will reach the end of file, so if you re-read it, it will return nothing.
+
+
+### 🔹 File Methods
+
+| Method             | Description                               |
+| ------------------ | ----------------------------------------- |
+| `read()`           | Reads entire content as a single string   |
+| `readline()`       | Reads the next line                       |
+| `readlines()`      | All lines as a list                       |
+| `write(str)`       | Writes string to file                     |
+| `writelines(list)` | Writes list of strings                    |
+| `seek(offset)`     | Moves file pointer to given byte position |
+| `tell()`           | Returns current file pointer position     |
+| `close()`          | Closes file                               |
+| `flush()`          | Forces write to disk (buffer flush)       |
