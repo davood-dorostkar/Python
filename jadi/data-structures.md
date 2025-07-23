@@ -436,6 +436,14 @@ bool("hello")   # True
 | `<=`     | Less than or equal    | `3 <= 3` | `True`  |
 | `>=`     | Greater than or equal | `3 >= 4` | `False` |
 
+- Python also support multiple comparison at once like:
+```py
+a = 10
+b = 20
+c = 30
+a < b < c > 1 # True
+```
+
 ### 🔹 Logical Operators
 
 | Operator | Description                | Example          | Result  |
