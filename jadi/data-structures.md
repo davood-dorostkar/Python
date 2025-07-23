@@ -203,8 +203,6 @@ msg[::-1] # '9876543210'
 
 Absolutely! Here's a **very brief tutorial for `dict` in Python**, covering the essentials you asked for:
 
----
-
 ## Dictionary
 
 ### 🔹 Create a dictionary:
