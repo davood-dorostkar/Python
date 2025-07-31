@@ -1,6 +1,6 @@
 # Data Structures
 
-## Precedence
+## Operators
 
 | Effective Precedence | Operator(s)         | Description                    | Associativity |
 | -------------------- | ------------------- | ------------------------------ | ------------- |
@@ -10,51 +10,12 @@
 | 3                    | `*`, `/`, `//`, `%` | Multiplication, division, etc. | Left-to-right |
 | 4                    | `+`, `-`            | Addition, subtraction          | Left-to-right |
 
-## Operators
 
 - in python 3.0, `/` always returns a float.
 - `//` returns the integer result.
 - `%` is the mod operator, `10%3 = 1`
-
-## Numbers
-
 - `1_000_000` is equal to `1000000`
 
-## print()
-
-Internally, `print()` uses the `sep` parameter to separate multiple items:
-
-```python
-print(a, b, sep=' ')
-```
-
-By default, `sep=' '` (a single space), so:
-
-```python
-print('ali', 2)
-```
-
-prints:
-
-```
-ali 2
-```
-
-### 🔹 How to avoid the space?
-
-If you don’t want the space, either:
-
-1. **Use string concatenation**:
-
-   ```python
-   print(a + str(b))  # Outputs: ali2
-   ```
-
-2. **Change `sep` parameter**:
-
-   ```python
-   print(a, b, sep='')  # Outputs: ali2
-   ```
 
 ## Types
 you can check var type with:
