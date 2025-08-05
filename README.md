@@ -8,3 +8,4 @@
 - [OOP](jadi/oop.md)
 - [Packages](jadi/packages.md)
 - [Error Handling](jadi/error-handling.md)
+- [Decorators](jadi/decorators.md)
