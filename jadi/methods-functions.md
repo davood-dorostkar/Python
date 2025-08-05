@@ -40,7 +40,7 @@ def outer():
 ```
 
 
-## 🔹 Functions with Default Arguments
+## Functions with Default Arguments
 
 You can specify default values for parameters:
 
@@ -53,7 +53,7 @@ print(greet("Alice"))  # Hello, Alice!
 ```
 
 
-## 🔹 Positional & Keyword Arguments
+## Positional & Keyword Arguments
 
 You can pass arguments by position or by name:
 
@@ -70,7 +70,7 @@ Here’s the improved **`*args` and `**kwargs`** section with clearer and deeper
 
 ---
 
-## 🔹 `*args` and `**kwargs`
+## `*args` and `**kwargs`
 
 Sometimes, you don't know in advance how many arguments a function will receive. Python gives you two powerful tools to handle such cases:
 
@@ -123,7 +123,7 @@ describe("Report", 2024, "Q1", author="Alice", pages=5)
 # Keyword args: {'author': 'Alice', 'pages': 5}
 ```
 
-## 🔹 `map()` Function
+## `map()` Function
 
 Apply a function to all items in an iterable:
 
@@ -139,7 +139,7 @@ print(list(result))  # [1, 16, 4, 36]
 Note: `map()` returns a **lazy object**. Convert it to a list to see results immediately.
 
 
-## 🔹 `lambda` Functions
+## `lambda` Functions
 
 `lambda` is used to create **small anonymous functions**:
 
@@ -157,7 +157,7 @@ print(multiply(3, 4))  # 12
 ```
 
 
-## 🔹 `filter()` Function
+## `filter()` Function
 
 Used to filter elements based on a condition:
 
@@ -171,7 +171,7 @@ print(list(filtered))  # [2.1]
 ```
 
 
-## 🔹 LEGB Rule in Python
+## LEGB Rule in Python
 
 Python uses the **LEGB rule** to resolve variable names:
 
@@ -203,7 +203,7 @@ def test():
 It will use the **global** `name` if it's not found locally.
 
 
-## 🔹 `global` Keyword
+## `global` Keyword
 
 If you need to **modify a global variable** inside a function, use `global` — but this is **not recommended** in most cases.
 
@@ -237,7 +237,7 @@ prints:
 ali 2
 ```
 
-### 🔹 How to avoid the space?
+### How to avoid the space?
 
 If you don’t want the space, either:
 
@@ -252,3 +252,35 @@ If you don’t want the space, either:
    ```python
    print(a, b, sep='')  # Outputs: ali2
    ```
+
+## Function Object
+a function is an object that we can use directly instead of calling it.
+```py
+def say_hello():
+    print('hello world')
+
+
+print(say_hello) # printing the object info: <function say_hello at 0x70aed8d96340>
+```
+- this way we can pass functions as arguments:
+```py
+def add(a, b):
+    return a + b
+
+def calc(a, b, func):
+    return func(a, b)
+
+result = calc(1, 4, add)
+print(result)
+```
+- you also can assign functions to another object (e.g. *functions are first-class citizens*):
+```py
+def add(a, b):
+    return a + b
+
+addition = add
+
+print(add)          # <function add at 0x7bf5731da340>
+print(addition)     # <function add at 0x7bf5731da340>
+```
+if you do so, the second object will point to the same thing, and if the first one is deleted (`del add`), the second one will still exist (like `shared pointers`).
