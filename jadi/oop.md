@@ -142,7 +142,7 @@ jack.walk()  # ✅ Runs fast
 **Dunder methods** are special methods surrounded by double underscores (`__name__`).
 They let you define how your objects behave with built-in functions and operators.
 
-### Common dunder methods:
+### 🔹 Common dunder methods:
 
 | Method     | Purpose                         | Example Use             |
 | ---------- | ------------------------------- | ----------------------- |
@@ -153,7 +153,7 @@ They let you define how your objects behave with built-in functions and operator
 | `__len__`  | Length of object                | `len(obj)`              |
 | `__eq__`   | Equality check (`==`)           | `obj1 == obj2`          |
 
-### Example:
+### 🔹 Example:
 
 ```python
 class Book:

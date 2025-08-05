@@ -24,7 +24,7 @@ for i in range(3):
     print(i)  # → 0 1 2
 ```
 
-### 🔸 Loop with `_`
+### 🔹 Loop with `_`
 
 Use `_` when you **don’t care about the loop variable**.
 
@@ -33,7 +33,7 @@ for _ in range(5):
     print("Repeat")  # Just repeats 5 times
 ```
 
-### 🔸 Loop over iterable
+### 🔹 Loop over iterable
 
 Works with any sequence like string, list, etc.
 
@@ -42,7 +42,7 @@ for char in "Ali":
     print(char)
 ```
 
-### 🔸 Unpacking in loops
+### 🔹 Unpacking in loops
 
 You can unpack tuples or pairs directly:
 
@@ -73,7 +73,7 @@ Control how loops behave:
 | `break`    | Exit the **current loop**     |
 | `continue` | Skip rest of this iteration   |
 
-### 🔸 In nested loops:
+### 🔹 In nested loops:
 
 * `break`/`continue` affect **only the innermost loop**.
 
@@ -121,14 +121,14 @@ status = "Adult" if age >= 18 else "Minor"
 
 ## Ternary + List Comprehension
 
-### 🔸 Condition on the **result**:
+### 🔹 Condition on the **result**:
 
 ```python
 ["even" if x % 2 == 0 else "odd" for x in range(5)]
 # → ['even', 'odd', 'even', 'odd', 'even']
 ```
 
-### 🔸 Condition on the **loop itself**:
+### 🔹 Condition on the **loop itself**:
 
 ```python
 [x for x in range(5) if x % 2 == 0]
