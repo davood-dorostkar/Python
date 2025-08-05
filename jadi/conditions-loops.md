@@ -134,7 +134,7 @@ status = "Adult" if age >= 18 else "Minor"
 [x for x in range(5) if x % 2 == 0]
 # → [0, 2, 4]
 ```
-
+>both methods result to the same thing. one difference is that in the first method, you must have an `else` section, while in the second method, you can ommit `else`.
 
 ## `range()`
 
