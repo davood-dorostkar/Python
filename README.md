@@ -9,3 +9,5 @@
 - [Packages](jadi/packages.md)
 - [Error Handling](jadi/error-handling.md)
 - [Decorators](jadi/decorators.md)
+- [Generators](jadi/generators.md)
+- [Python Standard Library](jadi/adv-modules.md)
