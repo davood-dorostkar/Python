@@ -164,6 +164,29 @@ def check_login(func):
     return wrapper
 ```
 
+📌 When your function accepts argument, you **must** define arguments in the wrapper. Effectively, the **function name** is passed to the **decorator** (`def timer(f):`) and the **function arguments** are passed to the **wrapper** (`def wrapper(*args, **kwargs):`).
+
+**Example:**
+```py
+import time
+
+def timer(f):
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        f(*args, **kwargs)
+        end = time.perf_counter()
+        print(f'time taken: {1000 * (end - start):.3f} milliseconds')
+    return wrapper
+
+@timer
+def make_list(n):
+    my_list = [i for i in range(1, n + 1)]
+    print(my_list)
+
+n = int(input('give a number: '))
+make_list(n)
+```
+
 ### 3. Preserve Metadata with `functools.wraps`
 
 Use `@wraps(func)` to keep original function names and docstrings. With `@wraps`, tools like `help(open_home_page)` or `__name__` show the original function name instead of wrapper.
