@@ -13,3 +13,4 @@
 - [Python Standard Library](jadi/python-stl.md)
 - Python Applications
   - [Web Scraping](jadi/web-scraping.md)
+  - [Working with Images](jadi/images.md)
