@@ -94,6 +94,16 @@ print(result)
 ```
 >here `{age:3.1f}` means: take 3 places for the whole number, with 1 decimal, and as float 
 
+### ASCII
+get the ascii value of a string:
+```py
+val = ord('a')
+```
+get the character equivalent of an ascii value:
+```py
+val = chr(104)
+```
+
 ## Slicing
 
 a slice is part of a list. example: `msg[n:m]`. the `n` is included, the `m` is not included. in math it is `[a,b)`.
