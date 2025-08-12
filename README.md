@@ -10,4 +10,6 @@
 - [Error Handling](jadi/error-handling.md)
 - [Decorators](jadi/decorators.md)
 - [Generators](jadi/generators.md)
-- [Python Standard Library](jadi/adv-modules.md)
+- [Python Standard Library](jadi/python-stl.md)
+- Python Applications
+  - [Web Scraping](jadi/web-scraping.md)
