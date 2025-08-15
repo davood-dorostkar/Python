@@ -14,3 +14,4 @@
 - Python Applications
   - [Web Scraping](jadi/web-scraping.md)
   - [Working with Images](jadi/images.md)
+  - [Working with Files](jadi/files.md)
