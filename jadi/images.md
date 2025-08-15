@@ -121,38 +121,44 @@ img.show()
 We can hide text inside an image by modifying pixel values (lossless formats like PNG are required to avoid data corruption).
 
 ```python
-from PIL import Image
+from PIL import Image 
 import os
 
 def encrypt(msg, path):
     img = Image.open(path)
-    for i in range(0, img.size[0], 10):  # Every 10 pixels (x)
-        for j in range(0, img.size[1], 10):  # Every 10 pixels (y)
-            if msg:
-                r = ord(msg[0])  # Convert character → ASCII code
-                g, b = img.getpixel((i, j))[1:]  # Keep G & B
+    for i in range(0, img.size[0], 10):
+        for j in range(0, img.size[1], 10):
+            if len(msg) > 0:
+                r = ord(msg[0])
+                g = img.getpixel((i, j))[1]
+                b = img.getpixel((i, j))[2]
                 img.putpixel((i, j), (r, g, b))
-                msg = msg[1:]  # Move to next character
+                msg = msg[1:]
     root, _ = os.path.splitext(path)
-    img.save(root + '-enc.png', format='PNG')  # Must be PNG!
+    img.save(root + '-enc.png', format='PNG')
+    # Note: saving as png is needed, because if you save as jpg,
+    # the lossy algorithm with change the pixels and practically
+    # your data will be lost
 
 def decrypt(path):
     img = Image.open(path)
-    hidden_text = ''
+    password = ''
     for i in range(0, img.size[0], 10):
         for j in range(0, img.size[1], 10):
-            r = img.getpixel((i, j))[0]  # Red channel
-            hidden_text += chr(r)  # ASCII → character
-    print(hidden_text[:100])  # Print first 100 chars
+            r = img.getpixel((i, j))[0]
+            password += chr(r)
+
+    print(password[:100])
+
 
 if __name__ == "__main__":
-    # Encrypt
-    path1 = "davood-cartoon.jpg"
-    msg = "The only way to do great work is to love what you do."
+    # encryption
+    path1 = os.path.join(os.path.curdir, 'davood-cartoon.jpg')
+    msg = 'The only way to do great work is to love what you do.'
     encrypt(msg, path1)
 
-    # Decrypt
-    path2 = "davood-cartoon-enc.png"
+    # decryption
+    path2 = os.path.join(os.path.curdir, 'davood-cartoon-enc.png')
     decrypt(path2)
 ```
 
