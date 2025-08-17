@@ -1,5 +1,7 @@
 # Python
 
+![](jadi/python.png)
+
 ## Python with Jadi
 
 - [Data Structures](jadi/data-structures.md)
