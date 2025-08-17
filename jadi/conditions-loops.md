@@ -158,37 +158,54 @@ for i, val in enumerate(lst):
 ```
 
 
-## `zip()`
+## Itertools
 
-Pairs items from multiple iterables together.
-
-```python
-names = ["Ali", "Sara"]
-scores = [90, 85]
-for name, score in zip(names, scores):
-    print(name, score)
-```
-every item in the zip is a tuple:
-```
-('Ali', 90)
-('Sara', 85)
-```
-
-## `max()`, `min()`
-
-Return the largest/smallest item in an iterable.
+The `itertools` module builds **fast, memory-efficient iterators**.
 
 ```python
-max([3, 1, 4])  # → 4
-min("hello")   # → 'e' (alphabetically smallest)
+import itertools as it
+
+# cycle → infinite loop through elements
+target_ip = it.cycle([
+    '10:e7:c6:22:de:81', 
+    '52:54:00:6c:78:a4', 
+    '12:cd:96:8e:ec:f1'])
+
+for _ in range(5):
+    print(next(target_ip))
 ```
 
+Output cycles through the list repeatedly.
 
-## `randint()`
 
-Generates a **random integer** in a given range.
+### Other itertools tools
 
 ```python
-from random import randint
-x = randint(1, 6)  # Random int between 1 and 6 (inclusive on both sides)
+nums = [1, 2, 3, 4]
+
+# Combinations (no repeats)
+list(it.combinations(nums, 2))
+# [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+
+# Combinations with replacement
+list(it.combinations_with_replacement(nums, 2))
+# [(1, 1), (1, 2), ..., (4, 4)]
+
+# Permutations (order matters)
+list(it.permutations(nums, 2))
+# [(1, 2), (1, 3), ..., (4, 3)]
+
+# Counting
+counter = it.count(3, 10)  # start=3, step=10
+next(counter)  # 3
+next(counter)  # 13
+
+# Accumulate (running totals)
+list(it.accumulate(nums))  # [1, 3, 6, 10]
+
+# Cartesian product
+l1 = [1, 2]
+l2 = ['a', 'b']
+list(it.product(l1, l2))
+# [(1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')]
 ```

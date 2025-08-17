@@ -123,22 +123,6 @@ describe("Report", 2024, "Q1", author="Alice", pages=5)
 # Keyword args: {'author': 'Alice', 'pages': 5}
 ```
 
-## `map()` Function
-
-Apply a function to all items in an iterable:
-
-```python
-def square(x):
-    return x ** 2
-
-data = [1, 4, 2, 6]
-result = map(square, data)
-print(list(result))  # [1, 16, 4, 36]
-```
-
-Note: `map()` returns a **lazy object**. Convert it to a list to see results immediately.
-
-
 ## `lambda` Functions
 
 `lambda` is used to create **small anonymous functions**:
@@ -155,21 +139,6 @@ Another example:
 multiply = lambda x, y: x * y
 print(multiply(3, 4))  # 12
 ```
-
-
-## `filter()` Function
-
-Used to filter elements based on a condition:
-
-```python
-def is_float(x):
-    return x != int(x)
-
-data = [1, 4, 2.1, 6]
-filtered = filter(is_float, data)
-print(list(filtered))  # [2.1]
-```
-
 
 ## LEGB Rule in Python
 
@@ -216,6 +185,69 @@ def increment():
 ```
 
 Why not recommended? Because it makes the code **harder to debug and understand**.
+
+## `map()` Function
+
+Apply a function to all items in an iterable:
+
+```python
+def square(x):
+    return x ** 2
+
+data = [1, 4, 2, 6]
+result = map(square, data)
+print(list(result))  # [1, 16, 4, 36]
+```
+
+Note: `map()` returns a **lazy object**. Convert it to a list to see results immediately.
+
+## `filter()` Function
+
+Used to filter elements based on a condition:
+
+```python
+def is_float(x):
+    return x != int(x)
+
+data = [1, 4, 2.1, 6]
+filtered = filter(is_float, data)
+print(list(filtered))  # [2.1]
+```
+
+## `zip()`
+
+Pairs items from multiple iterables together.
+
+```python
+names = ["Ali", "Sara"]
+scores = [90, 85]
+for name, score in zip(names, scores):
+    print(name, score)
+```
+every item in the zip is a tuple:
+```
+('Ali', 90)
+('Sara', 85)
+```
+
+## `max()`, `min()`
+
+Return the largest/smallest item in an iterable.
+
+```python
+max([3, 1, 4])  # → 4
+min("hello")   # → 'e' (alphabetically smallest)
+```
+
+
+## `randint()`
+
+Generates a **random integer** in a given range.
+
+```python
+from random import randint
+x = randint(1, 6)  # Random int between 1 and 6 (inclusive on both sides)
+```
 
 ## print()
 

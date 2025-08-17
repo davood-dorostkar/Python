@@ -16,6 +16,30 @@
 - `%` is the mod operator, `10%3 = 1`
 - `1_000_000` is equal to `1000000`
 
+## Numbers
+
+Python supports different number systems and operations:
+
+```python
+hex(12)   # '0xc' → hexadecimal (base 16)
+oct(12)   # '0o14' → octal (base 8)
+bin(12)   # '0b1100' → binary (base 2)
+
+# Using hexadecimal in range
+for i in range(0x12):  # 0x12 = 18 in decimal
+    print(i)
+
+# Converting from other bases
+int('12', 8)      # 10 in decimal (interprets string "12" as octal)
+int('11232', 17)  # interprets as base-17 number
+
+# Modular exponentiation (efficient!)
+pow(2, 100, 45)   # (2 ** 100) % 45
+
+abs(-4)           # 4
+round(3.14)       # 3
+round(2.5)        # 2 (rounds to nearest even number in ties)
+```
 
 ## Types
 you can check var type with:
@@ -93,6 +117,40 @@ result = template.format(name="Ali", age=25.666)
 print(result)
 ```
 >here `{age:3.1f}` means: take 3 places for the whole number, with 1 decimal, and as float 
+
+### 🔹 String Methods Examples
+```python
+s = 'davood is a programmer'
+
+# Case operations
+s.upper()       # 'DAVOOD IS A PROGRAMMER'
+s.lower()       # 'davood is a programmer'
+s.capitalize()  # 'Davood is a programmer'
+s.title()       # 'Davood Is A Programmer'
+
+# Finding & formatting
+s.find('is')    # 7 (index of first match), -1 if not found
+s.center(50)    # Pads string with spaces
+s.center(50, '*')  # Pads with *
+
+# Checks
+s.isalpha()     # False → contains spaces
+s.isnumeric()   # False
+s.isalnum()     # False
+
+# Start/end checks
+s.startswith('da')   # True
+s.endswith('er')     # True
+text = "12345abc"
+text.startswith(("1", "12", "123"))  # True (tuple works!)
+
+# Splitting & joining
+s.split(' ')       # ['davood', 'is', 'a', 'programmer']
+s.partition('is')  # ('davood ', 'is', ' a programmer')
+
+l = ['davood', 'is', 'here']
+'___'.join(l)  # 'davood___is___here'
+```
 
 ### ASCII
 get the ascii value of a string:
@@ -172,7 +230,22 @@ msg[::-1] # '9876543210'
 | `copy()`           | Returns a shallow copy of the list              | `lst2 = lst.copy()`         |
 | `clear()`          | Removes all items from the list                 | `lst.clear()`               |
 
-Absolutely! Here's a **very brief tutorial for `dict` in Python**, covering the essentials you asked for:
+### 🔹 List Methods Examples
+
+```python
+l = [10, 2, 3]
+l.append(4)
+l.append(4)
+
+l.count(4)   # 2
+l.count(15)  # 0
+l.insert(2, 'davood')  # [10, 2, 'davood', 3, 4, 4]
+
+n = l.pop()    # removes last → 4
+n = l.pop(2)   # removes index 2 → 'davood'
+
+l.remove(10)   # removes FIRST occurrence of 10
+```
 
 ## Dictionary
 
@@ -268,6 +341,21 @@ print(profile["skills"][1])  # 'C++'
 | `copy()`               | Shallow copy of dict                       | `new = d.copy()`       |
 | `setdefault(k, d)`     | Returns value; sets key to `d` if missing  | `d.setdefault("x", 0)` |
 
+### 🔹 Dictionary Methods Examples
+
+```python
+# Keys don’t need to be strings
+d = {'name': 'davood', 3: 10}
+print(d[3])  # 10
+
+# Dictionary comprehension
+{x: x**3 for x in range(1, 5)}
+# {1: 1, 2: 8, 3: 27, 4: 64}
+
+{k: v for k, v in zip(['a', 'b'], [1, 2])}
+# {'a': 1, 'b': 2}
+```
+
 ## Tuple
 
 tuples are just like the lists, with all of their functionalities, except two things:
@@ -347,6 +435,44 @@ print(a & b)              # {2}
 | `len(s)`                       | Number of elements                   | `len(s)`                     |     |     |
 | `in`, `not in`                 | Membership test                      | `3 in s`                     |     |     |
 
+### 🔹 Set Methods Examples
+
+```python
+s = set()
+s.add(1)
+s = {1, 3}
+
+s.remove(100)    # ❌ Error if not found
+s.discard(100)   # ✅ Safe, no error
+s.clear()        # Empties set
+
+# Memory reference
+s1 = {1, 2, 3}
+s2 = s1
+s1.add(100)
+s1  # {1, 2, 3, 100}
+s2  # {1, 2, 3, 100} → same reference!
+
+s2 = s1.copy()  # ✅ Independent copy
+
+# Set operations
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+
+s1.difference(s2)        # {1, 2}
+s1.difference_update(s2) # modifies s1 → {1, 2}
+s1.isdisjoint(s2)        # True if no elements in common
+s1.issubset(s2)
+s1.issuperset(s2)
+
+s1.union(s2)  # {1, 2, 3, 4, 5}
+s1.update(s2) # modifies s1
+
+# Symmetric difference
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7}
+C = A.symmetric_difference(B)  # {1, 2, 3, 6, 7}
+```
 
 ### 🔹 Set Limitations
 sets in Python can only contain *hashable* (immutable) items.

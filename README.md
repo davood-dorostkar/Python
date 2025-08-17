@@ -15,4 +15,5 @@
   - [Web Scraping](jadi/web-scraping.md)
   - [Working with Images](jadi/images.md)
   - [Working with Files](jadi/files.md)
-  - [Working with Web Modules](jadi/web.md)
+  - [Working with Web Modules](jadi/web-modules.md)
+- [Virtual Environment](jadi/venv.md)
