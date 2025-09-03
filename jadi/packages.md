@@ -62,17 +62,13 @@ arange(10)
 Here are a few useful packages to explore:
 
 ```python
-requests  # makes HTTP requests easy (APIs, web scraping, etc.)
-tqdm      # adds progress bars to loops
+requests      # makes HTTP requests easy (APIs, web scraping, etc.)
+tqdm          # adds progress bars to loops
+pandas`       # data analysis and manipulation
+matplotlib    # plotting and visualization
+flask         # lightweight web development
+rich          # rich text formatting for the terminal
 ```
-
-Other useful packages:
-
-* `pandas`: data analysis and manipulation
-* `matplotlib`: plotting and visualization
-* `flask`: lightweight web development
-* `rich`: rich text formatting for the terminal
-
 
 ## 🧱 Creating Your Own Module or Package
 
