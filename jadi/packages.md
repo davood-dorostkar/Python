@@ -144,6 +144,26 @@ obj = MyClass()
 | Easier for small code | Useful for organizing large projects          |
 | Can be imported       | Can contain multiple modules and sub-packages |
 
+### 🔹Important Update
+
+In Python **3.2 and earlier**, a folder **must** contain an `__init__.py` file (even if it's empty) for Python to recognize it as a package and allow you to import from it. Starting with **Python 3.3**, a feature called **Implicit Namespace Packages** was introduced (via PEP 420). This means that a folder without an `__init__.py` file is **automatically considered a namespace package**.
+
+#### **Use a folder WITH `__init__.py` (Regular Package) when:**
+*   **You need initialization code.** The `__init__.py` is executed when the package is imported. You can use it to set up the package environment, consolidate imports, or run other crucial code.
+*   **You want to control what gets exported.** A very common use is the `__all__` list, which defines what symbols are imported when someone uses `from your_package import *`.
+*   **You need to maintain compatibility with older versions of Python** (anything before 3.3).
+*   **You are creating a library for public distribution.** It's the most common, explicit, and expected pattern. It gives you full control over your package's API.
+
+#### Summary
+
+| Feature | **Without `__init__.py`** (Namespace Pkg) | **With `__init__.py`** (Regular Pkg) |
+| :--- | :--- | :--- |
+| **Python Version** | **>= 3.3** | **All Versions** |
+| **Initialization** | Not possible | **Yes** (code runs on import) |
+| **API Control** | Limited | **Full control** (using `__all__`) |
+| **Common Use** | Simple packages, combining dist. packages | **The standard for most projects** |
+
+**Conclusion:** For most projects, especially those you plan to distribute, **it is still considered best practice to include an `__init__.py` file**. It's the explicit, traditional, and more powerful method. The ability to work without it is a useful modern feature for specific cases, but it doesn't replace the functionality of the traditional package structure.
 
 ## 🧠 `__name__` Variable in Python
 
