@@ -1,6 +1,6 @@
 # Python
 
-![](jadi/python.png)
+![](jadi/python.jpg)
 
 ## Python with Jadi
 
